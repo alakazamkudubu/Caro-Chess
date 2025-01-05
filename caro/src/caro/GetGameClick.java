@@ -90,8 +90,14 @@ public class GetGameClick implements MouseListener {
 			if (player1IsX && turn%2 != 0) {
 				player1Score++;
 			}
-			else {
+			if (player1IsX && turn%2 == 0) {
 				player2Score++;
+			}
+			if (!player1IsX && turn%2 != 0) {
+				player2Score++;
+			}
+			if (!player1IsX && turn%2 == 0) {
+				player1Score++;
 			}
 			board.drawScoredGameDashboard(player1IsX, player1Score, player2Score, gameEnd);
 		}
