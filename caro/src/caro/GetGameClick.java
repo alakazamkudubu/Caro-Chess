@@ -179,8 +179,10 @@ public class GetGameClick implements MouseListener {
 	}
 	
 	public void resumeGame() {
-		deactMainMenu = true;
-		gameStart = true;
+		if (quickGame || scoredGame) {
+			deactMainMenu = true;
+			gameStart = true;
+		}
 		if (quickGame) {
 			board.resetQuickGameBoard();
 		}
